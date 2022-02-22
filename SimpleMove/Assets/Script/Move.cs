@@ -7,6 +7,8 @@ public class Move : MonoBehaviour
     Vector3 goal;
     float speed = 1.0f;
     float accucary = 1.0f;
+
+    float rotSpeed = 5f;
     
     // Start is called before the first frame update
     void Start()
@@ -24,9 +26,17 @@ public class Move : MonoBehaviour
             goal = new Vector3(hit.point.x, this.transform.position.y, hit.point.z);
         }
 
-        this.transform.LookAt(goal);
-        if(Vector3.Distance(transform.position, goal) > accucary);
+        //this.transform.LookAt(goal);
+        Vector3 direction = goal - this.transform.position;
+
+        if(Vector3.Distance(transform.position, goal) > accucary)
         {
+            /*
+            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, 
+            Quaternion.LookRotation(direction), Time.deltaTime*rotSpeed);
+            */
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, 
+            Quaternion.LookRotation(direction), Time.deltaTime*rotSpeed);
             this.transform.Translate(0,0, speed*Time.deltaTime);
         }
              
