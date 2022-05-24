@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 126080553}
   - component: {fileID: 126080555}
   - component: {fileID: 126080554}
+  - component: {fileID: 126080556}
   m_Layer: 0
   m_Name: Player Attact
   m_TagString: Player
@@ -367,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126080550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4501812, y: -0.36683208, z: 0}
+  m_LocalPosition: {x: -0.4501812, y: 0.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -436,6 +437,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.615
+--- !u!114 &126080556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126080550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10974777e7e64f145ab9b98eb51c8d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  attack: 100
+  defense: 200
+  underAttack: 0
 --- !u!1 &154368811
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +547,8 @@ GameObject:
   - component: {fileID: 346767079}
   - component: {fileID: 346767082}
   - component: {fileID: 346767081}
+  - component: {fileID: 346767083}
+  - component: {fileID: 346767084}
   m_Layer: 0
   m_Name: TowerPlayer
   m_TagString: Player
@@ -649,6 +668,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &346767083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346767078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee685cfbe0d99a45811ffcc6973ec4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  defense: 1000
+  underAttack: 0
+--- !u!114 &346767084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346767078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a3cc28f5216e3449b3b75a51b62746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
 --- !u!1 &378413825
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +708,7 @@ GameObject:
   - component: {fileID: 378413826}
   - component: {fileID: 378413829}
   - component: {fileID: 378413828}
+  - component: {fileID: 378413830}
   m_Layer: 0
   m_Name: PlayerDefense
   m_TagString: Player
@@ -780,6 +828,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &378413830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378413825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee685cfbe0d99a45811ffcc6973ec4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  defense: 300
+  underAttack: 0
 --- !u!1 &380240215
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1053,8 @@ GameObject:
   - component: {fileID: 697321542}
   - component: {fileID: 697321545}
   - component: {fileID: 697321544}
+  - component: {fileID: 697321547}
+  - component: {fileID: 697321546}
   m_Layer: 0
   m_Name: TowerEnemy
   m_TagString: Enemy
@@ -1109,6 +1174,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &697321546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697321541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a3cc28f5216e3449b3b75a51b62746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+--- !u!114 &697321547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697321541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee685cfbe0d99a45811ffcc6973ec4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  defense: 300
+  underAttack: 0
 --- !u!1 &1279092324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1215,7 @@ GameObject:
   - component: {fileID: 1279092329}
   - component: {fileID: 1279092328}
   - component: {fileID: 1279092327}
+  - component: {fileID: 1279092330}
   m_Layer: 0
   m_Name: EnemyAttact
   m_TagString: Enemy
@@ -1204,7 +1298,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1, y: 0}
@@ -1257,6 +1351,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1279092330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279092324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10974777e7e64f145ab9b98eb51c8d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  attack: 100
+  defense: 100
+  underAttack: 0
 --- !u!1 &1314238572
 GameObject:
   m_ObjectHideFlags: 0
